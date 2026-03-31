@@ -1,52 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="ml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Test Lottery</title>
-<link rel="stylesheet" type="text/css" href="lottery.css" media="screen" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Lottery Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="maincontainer">
-
-<div id="topsection"><div class="innertube"><h1>My Lottery</h1></div></div>
-<p id="layoutdims"><marquee behavior="scroll" direction="left"><?php include '/include/marquee.php'; ?></marquee></p>
-
-<div id="contentwrapper">
-<div id="contentcolumn">
-<div class="innertube">
-<?php
-error_reporting(E_ALL ^ E_NOTICE);
-function index() 
-{ 
-include 'open_lotto.php';
-}
-$choice=$_GET['act']; 
-switch($choice) 
-{ 
-case "closed": 
-include 'closed_lotto.php';
-break;
-
-default: 
-index();
-}
-?>
-</div>
-</div>
-</div>
-
-<div id="leftcolumn">
-<div class="innertube">
-          <a href = "index.php"><button class="clean-gray">Current lotteries</button></a>
-          <a href = "index.php?act=closed"><button class="clean-gray">Closed lotteries</button></a>
-          <button class="clean-gray">FAQ</button>
+    <div class="container">
+        <h1>ലോട്ടറി നമ്പർ ജനറേറ്റർ</h1>
+        <div class="result-container">
+            <span id="lottery-code">??</span>
+            <span id="lottery-number">000000</span>
         </div>
-
-</div> 
-
-<div id="footer"><?php include '/include/footer.php'; ?></div>
-
-</div>
+        <button onclick="generateLottery()">പുതിയ നമ്പർ ജനറേറ്റ് ചെയ്യുക</button>
+        <p class="footer-text">ജെഫിൻ നിർമ്മിച്ചത്</p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
